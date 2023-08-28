@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">sesion2(2023)</string>
+
+    <string-array name="escuela_options">
+        <item>Seleccione Su escuela</item>
+        <item>FIA</item>
+        <item>Ciencias de la Salud</item>
+        <item>Ciencias Humanas y Educación</item>
+    </string-array>
+
+    <string-array name="carrera_fia">
+        <item>Sistemas</item>
+        <item>Civil</item>
+        <item>Arquitectura</item>
+        <item>Alimentarias</item>
+    </string-array>
+
+    <string-array name="carrera_salud">
+        <item>Nutricion Humana</item>
+        <item>Psicologia</item>
+        <item>Medicina</item>
+    </string-array>
+    <string-array name="carrera_educacion">
+        <item>Ciencias de la Comunicación</item>
+        <item>Educación Fisica</item>
+        <item>Educación Musical y Artes</item>
+        <item>Educación Inicial</item>
+    </string-array>
+
+
+</resources>

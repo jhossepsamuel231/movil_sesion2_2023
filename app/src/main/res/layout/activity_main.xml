@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <!-- Barra de navegación -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/green_phone"
+            app:title="appMatricula"
+            app:titleTextColor="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Sección "Alumnos App" -->
+
+        <TextView
+            android:id="@+id/textViewApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="MATRICULA"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/textViewAlumnos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="40dp"
+            android:text="Alumnos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewApp" />
+
+        <EditText
+            android:id="@+id/nomAlumnos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Ingrese nombre del alumno"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAlumnos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Sección "Escuela" -->
+        <TextView
+            android:id="@+id/textViewEscuela"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Escuela"
+            app:layout_constraintTop_toBottomOf="@+id/nomAlumnos"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerEscuela"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEscuela"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:entries="@array/escuela_options" />
+
+        <!-- Sección "Carrera" -->
+        <TextView
+            android:id="@+id/textViewCarrera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carrera"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerEscuela"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerCarrera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCarrera"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Sección "Gastos Adicionales" -->
+        <TextView
+            android:id="@+id/textViewGastosAdicionales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gastos Adicionales"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerCarrera"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupCarnet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textViewGastosAdicionales"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkBoxCarnetBiblioteca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carnet Biblioteca"
+                android:checked="true"
+                android:layout_marginStart="16dp"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxCarnetMedioPasaje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carnet Medio Pasaje"
+                android:layout_marginStart="16dp"/>
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/textViewNumeroCuotas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Número de Cuotas"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupCarnet"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupCuotas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNumeroCuotas"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="1dp"
+                android:text="4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNumeroCuotas" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="1dp"
+                android:text="5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioButton4" />
+
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:layout_marginStart="16dp"/>
+
+
+        </RadioGroup>
+
+        <!-- Sección "Costo Carrera" -->
+        <TextView
+            android:id="@+id/textViewCostoCarrera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Costo Carrera"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupCuotas"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextCostoCarrera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Ingrese costo de la carrera"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCostoCarrera"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Sección "Pensión" -->
+        <TextView
+            android:id="@+id/textViewPension"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pensión"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCostoCarrera"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextPension"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Ingrese pensión"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPension"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Sección "Total a Pagar" -->
+        <TextView
+            android:id="@+id/textViewTotalPagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total a Pagar"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPension"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextTotalPagar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Ingrese total a pagar"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTotalPagar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Botones de cálculo -->
+        <Button
+            android:id="@+id/btnCalculate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Calcular"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTotalPagar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnCalculateDos"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnCalculateDos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Imprimir"
+            android:onClick="imprimirMatricula"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTotalPagar"
+            app:layout_constraintStart_toEndOf="@+id/btnCalculate"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
